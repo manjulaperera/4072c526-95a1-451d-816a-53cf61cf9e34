@@ -88,8 +88,8 @@ description: "Task list for longest contiguous strictly increasing run feature"
 
 ### Implementation for User Story 2
 
-- [ ] T021 [US2] Extend `src/CodingTest/Parsing/IntegerSequenceParser.cs` and `src/CodingTest/Handlers/SubSequenceHandler.cs` to satisfy FR-C01–FR-C03 (null → `ArgumentNullException`; empty → `""`; invalid/empty tokens → `FormatException`; overflow → `OverflowException`)
-- [ ] T022 [US2] Verify supplementary tests pass: `dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj --filter "Category=Supplementary" --configuration Release`
+- [x] T021 [US2] Extend `src/CodingTest/Parsing/IntegerSequenceParser.cs` and `src/CodingTest/Handlers/SubSequenceHandler.cs` to satisfy FR-C01–FR-C03
+- [x] T022 [US2] Verify supplementary tests pass
 
 **Checkpoint**: Invalid-input contract tested and green
 

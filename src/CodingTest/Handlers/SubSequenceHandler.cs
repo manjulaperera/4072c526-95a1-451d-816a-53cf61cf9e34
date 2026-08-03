@@ -20,6 +20,13 @@ public static class SubSequenceHandler
     /// <exception cref="OverflowException">When a token exceeds the signed 32-bit range.</exception>
     public static string GetLongestIncreasingSubSequence(string input)
     {
+        ArgumentNullException.ThrowIfNull(input);
+
+        if (input.Length == 0)
+        {
+            return string.Empty;
+        }
+
         int[] values = IntegerSequenceParser.Parse(input);
         int[] run = ContiguousRunEvaluator.FindLongestRun(values);
         return RunFormatter.Format(run);

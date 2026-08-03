@@ -6,6 +6,13 @@ internal static class IntegerSequenceParser
 {
     public static int[] Parse(string input)
     {
+        ArgumentNullException.ThrowIfNull(input);
+
+        if (input.Length == 0)
+        {
+            return [];
+        }
+
         string[] parts = input.Split(' ');
         var values = new int[parts.Length];
 

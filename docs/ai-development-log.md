@@ -73,6 +73,17 @@ Human review and verification are required before accepting any AI-generated cha
 
 ---
 
+## 2026-08-03 — Invalid-input guards (T021-T022)
+
+| Field | Detail |
+| ----- | ------ |
+| **Activity** | `/speckit-implement` FR-C01–FR-C03 null and empty handling |
+| **Changes** | `ArgumentNullException.ThrowIfNull` and empty-string early return in handler and parser |
+| **Verification** | `Category=Supplementary` Release — Passed: 8/8; full suite — Passed: 20/20 |
+| **Outcome** | CI test step should pass on next push |
+
+---
+
 ## Template for future entries
 
 ```markdown
