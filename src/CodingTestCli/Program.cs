@@ -1,4 +1,16 @@
-// CLI entry point - implementation deferred to US3 (T023).
+using CodingTest.Handlers;
 
-Console.Error.WriteLine("CodingTestCli scaffold: business logic not yet implemented.");
-Environment.Exit(1);
+try
+{
+    string input = args.Length > 0
+        ? string.Join(' ', args)
+        : Console.In.ReadLine() ?? string.Empty;
+
+    string result = SubSequenceHandler.GetLongestIncreasingSubSequence(input);
+    Console.Write(result);
+    return 0;
+}
+catch
+{
+    return 1;
+}

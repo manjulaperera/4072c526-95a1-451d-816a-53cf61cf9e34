@@ -103,8 +103,8 @@ description: "Task list for longest contiguous strictly increasing run feature"
 
 ### Implementation for User Story 3
 
-- [ ] T023 [US3] Implement CLI entry point in `src/CodingTestCli/Program.cs` (prefer command-line args when present, otherwise stdin; document precedence in `README.md`; write handler result to stdout; exit 0 on success)
-- [ ] T024 [US3] Run manual smoke tests per `specs/001-contiguous-increasing-run/quickstart.md` section 4 using `src/CodingTestCli/Program.cs`
+- [x] T023 [US3] Implement CLI entry point in `src/CodingTestCli/Program.cs`
+- [x] T024 [US3] Run manual smoke tests per `specs/001-contiguous-increasing-run/quickstart.md` section 4 using `src/CodingTestCli/Program.cs`
 
 **Checkpoint**: CLI independently verifies core behaviour
 

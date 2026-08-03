@@ -84,6 +84,17 @@ Human review and verification are required before accepting any AI-generated cha
 
 ---
 
+## 2026-08-03 — CLI entry point (T023-T024)
+
+| Field | Detail |
+| ----- | ------ |
+| **Activity** | `/speckit-implement` console application |
+| **Changes** | `Program.cs` reads args (joined with space) or stdin line; writes handler result to stdout; exit 0/1; README CLI section |
+| **Verification** | Smoke: `"6 1 5 9 2"` → `1 5 9`; `"6 2 4 6 1 5 9 2"` → `2 4 6`; `"6 2 4 3 1 5 9"` → `1 5 9`; stdin pipe → `1 5 9` |
+| **Outcome** | US3 CLI checkpoint complete |
+
+---
+
 ## Template for future entries
 
 ```markdown
