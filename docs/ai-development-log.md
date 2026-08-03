@@ -95,6 +95,17 @@ Human review and verification are required before accepting any AI-generated cha
 
 ---
 
+## 2026-08-03 — Code quality controls and polish (T025-T031)
+
+| Field | Detail |
+| ----- | ------ |
+| **Activity** | `/speckit-implement` coverage, Docker, CI, README |
+| **Changes** | CI coverage collection + artifact upload; multi-stage Dockerfile + `.dockerignore`; Docker CI job; expanded README |
+| **Verification** | `dotnet format --verify-no-changes`; Release build 0 warnings; 20/20 tests; coverage.cobertura.xml generated; Docker validated in CI (not available locally) |
+| **Outcome** | Phase 6 complete; definition of done satisfied except Docker local smoke (CI job covers it) |
+
+---
+
 ## Template for future entries
 
 ```markdown

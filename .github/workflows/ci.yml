@@ -32,5 +32,37 @@ jobs:
       - name: Build
         run: dotnet build CodingTest.sln --configuration Release --no-restore
 
-      - name: Test
-        run: dotnet test CodingTest.sln --configuration Release --no-build --verbosity normal --logger "console;verbosity=normal"
+      - name: Test with coverage
+        run: >
+          dotnet test CodingTest.sln
+          --configuration Release
+          --no-build
+          --verbosity normal
+          --logger "console;verbosity=normal"
+          --collect:"XPlat Code Coverage"
+          --results-directory TestResults
+
+      - name: Upload coverage results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: TestResults/**/*.cobertura.xml
+          if-no-files-found: warn
+
+  docker:
+    name: Docker build validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -f src/CodingTestCli/Dockerfile -t coding-test-cli .
+
+      - name: Run Docker smoke test
+        run: |
+          output="$(docker run --rm coding-test-cli "6 1 5 9 2")"
+          test "$output" = "1 5 9"

@@ -114,13 +114,13 @@ description: "Task list for longest contiguous strictly increasing run feature"
 
 **Purpose**: Coverage, Docker, documentation, and full quickstart validation
 
-- [ ] T025 [P] Add coverlet.collector package reference to `tests/CodingTestUnitTests/CodingTestUnitTests.csproj`
-- [ ] T026 Extend `.github/workflows/ci.yml` with coverage collection step (`--collect:"XPlat Code Coverage"`)
-- [ ] T027 Create multi-stage `src/CodingTestCli/Dockerfile` (SDK build/publish → runtime image with `ENTRYPOINT ["dotnet", "CodingTestCli.dll"]`)
-- [ ] T028 [P] Add Docker build validation job/stage to `.github/workflows/ci.yml`
-- [ ] T029 [P] Expand `README.md` with build, test, format, CLI, Docker, and CI verification instructions per `specs/001-contiguous-increasing-run/quickstart.md` section 10
-- [ ] T030 Update `docs/ai-development-log.md` with implementation completion entry and verification commands run
-- [ ] T031 Run full quickstart validation checklist in `specs/001-contiguous-increasing-run/quickstart.md` section 10 (Definition of done)
+- [x] T025 [P] Add coverlet.collector package reference to `tests/CodingTestUnitTests/CodingTestUnitTests.csproj`
+- [x] T026 Extend `.github/workflows/ci.yml` with coverage collection step (`--collect:"XPlat Code Coverage"`)
+- [x] T027 Create multi-stage `src/CodingTestCli/Dockerfile` (SDK build/publish → runtime image with `ENTRYPOINT ["dotnet", "CodingTestCli.dll"]`)
+- [x] T028 [P] Add Docker build validation job/stage to `.github/workflows/ci.yml`
+- [x] T029 [P] Expand `README.md` with build, test, format, CLI, Docker, and CI verification instructions per `specs/001-contiguous-increasing-run/quickstart.md` section 10
+- [x] T030 Update `docs/ai-development-log.md` with implementation completion entry and verification commands run
+- [x] T031 Run full quickstart validation checklist in `specs/001-contiguous-increasing-run/quickstart.md` section 10 (Definition of done)
 
 ---
 

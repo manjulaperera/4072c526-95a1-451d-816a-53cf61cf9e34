@@ -1,0 +1,17 @@
+# Build context for CodingTestCli (repository root: docker build -f src/CodingTestCli/Dockerfile .)
+**/.git
+**/.github
+**/.cursor
+**/.specify
+**/bin
+**/obj
+**/TestResults
+**/*.user
+**/*.suo
+**/.vs
+**/.idea
+**/coverage*
+specs/
+requirements/
+docs/
+tests/
