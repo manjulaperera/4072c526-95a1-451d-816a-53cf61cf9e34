@@ -4,13 +4,13 @@ try
 {
     string input = args.Length > 0
         ? string.Join(' ', args)
-        : Console.In.ReadLine() ?? string.Empty;
+        : await Console.In.ReadLineAsync() ?? string.Empty;
 
     string result = SubSequenceHandler.GetLongestIncreasingSubSequence(input);
-    Console.Write(result);
+    await Console.Out.WriteAsync(result);
     return 0;
 }
-catch
+catch (Exception)
 {
     return 1;
 }

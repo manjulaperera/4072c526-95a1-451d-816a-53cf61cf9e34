@@ -16,5 +16,12 @@ RUN dotnet publish src/CodingTestCli/CodingTestCli.csproj \
 
 FROM mcr.microsoft.com/dotnet/runtime:8.0 AS runtime
 WORKDIR /app
-COPY --from=build /app/publish .
+
+RUN groupadd --system --gid 1000 appgroup \
+    && useradd --system --uid 1000 --gid appgroup --no-create-home appuser
+
+COPY --from=build --chown=appuser:appgroup /app/publish .
+
+USER appuser
+
 ENTRYPOINT ["dotnet", "CodingTestCli.dll"]

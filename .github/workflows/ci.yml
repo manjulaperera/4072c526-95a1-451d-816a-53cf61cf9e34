@@ -50,7 +50,7 @@ jobs:
           /d:sonar.token="${SONAR_TOKEN}"
           /d:sonar.sourceEncoding="UTF-8"
           /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
-          /d:sonar.exclusions="**/bin/**,**/obj/**,**/Fixtures/**"
+          /d:sonar.exclusions="**/bin/**,**/obj/**,**/Fixtures/**,**/.specify/**,**/.cursor/**"
           /d:sonar.test.inclusions="**/*Tests/**/*.cs,**/*UnitTests/**/*.cs"
           /d:sonar.coverage.exclusions="**/Program.cs"
 
