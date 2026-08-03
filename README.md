@@ -2,6 +2,8 @@
 
 [![Build and Test](https://github.com/manjulaperera/4072c526-95a1-451d-816a-53cf61cf9e34/actions/workflows/ci.yml/badge.svg)](https://github.com/manjulaperera/4072c526-95a1-451d-816a-53cf61cf9e34/actions/workflows/ci.yml)
 
+<!-- Add SonarCloud badges from Project → Information → Badges after the project is created -->
+
 ## Problem
 Develop a function that takes one string input of any number of integers separated by single whitespace. The function then outputs the longest increasing subsequence (increased by any number) present in that sequence. If more than 1 sequence exists with the longest length, output the earliest one. You may develop supporting functions as many as you find reasonable. Your function should pass the test cases provided below.
 
@@ -45,11 +47,15 @@ Supplied evaluator tests only (11 cases):
 dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj --configuration Release --filter "Category=Unit_Tests"
 ```
 
-Coverage collection:
+Coverage collection (OpenCover format for SonarCloud):
 
 ```bash
-dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj --configuration Release --collect:"XPlat Code Coverage"   --results-directory ./TestResults
+dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj --configuration Release --settings coverlet.runsettings --collect:"XPlat Code Coverage"   --results-directory ./TestResults
 ```
+
+## SonarCloud
+
+GitHub Actions generate the SonarCloud reporting dashboard here: 
 
 ## CLI
 
@@ -90,8 +96,9 @@ GitHub Actions runs on every push and pull request:
 1. Restore dependencies
 2. Verify formatting (`dotnet format --verify-no-changes`)
 3. Release build
-4. Test with code coverage collection
-5. Docker build and smoke test
+4. Test with OpenCover coverage collection
+5. SonarCloud analysis (when `SONAR_ENABLED` is `true`)
+6. Docker build and smoke test
 
 Workflow file: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 

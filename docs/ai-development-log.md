@@ -106,6 +106,17 @@ Human review and verification are required before accepting any AI-generated cha
 
 ---
 
+## 2026-08-03 — SonarCloud coverage reporting (T032-T035)
+
+| Field | Detail |
+| ----- | ------ |
+| **Activity** | `/speckit-implement` SonarCloud integration |
+| **Changes** | `sonar-project.properties`, `coverlet.runsettings` (OpenCover), CI `dotnet-sonarscanner` begin/end, README badges and setup docs |
+| **Verification** | Local test produces `coverage.opencover.xml`; CI skips Sonar steps until `SONAR_ENABLED=true` |
+| **Outcome** | SonarCloud ready; user must configure SonarCloud import + GitHub secrets/variables |
+
+---
+
 ## Template for future entries
 
 ```markdown

@@ -93,11 +93,20 @@ Additional spot checks:
 ```bash
 dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj \
   --configuration Release \
+  --settings coverlet.runsettings \
   --collect:"XPlat Code Coverage" \
   --results-directory ./TestResults
 ```
 
-**Expected**: Coverage report generated under `TestResults/`; CI publishes equivalent artifact.
+**Expected**: OpenCover report under `TestResults/**/coverage.opencover.xml`; CI uploads the same format and publishes to SonarCloud when `SONAR_ENABLED` is `true`.
+
+---
+
+## 5b. SonarCloud
+
+The SonarCloud project **must be created first** on [sonarcloud.io](https://sonarcloud.io) (*Analyze new project* → this repo). Copy the assigned **Project key** into the GitHub `SONAR_PROJECT_KEY` variable. Full steps: [README.md § SonarCloud](../../README.md#sonarcloud).
+
+**Expected**: After the first successful CI run with `SONAR_ENABLED=true`, coverage appears on your SonarCloud project dashboard (URL is shown in SonarCloud after import — it depends on your organization and project key).
 
 ---
 

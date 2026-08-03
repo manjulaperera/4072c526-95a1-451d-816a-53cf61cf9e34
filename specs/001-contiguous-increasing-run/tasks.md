@@ -124,6 +124,17 @@ description: "Task list for longest contiguous strictly increasing run feature"
 
 ---
 
+## Phase 7: SonarCloud code quality and coverage
+
+**Purpose**: Publish coverage and quality metrics to SonarCloud for dashboard visibility
+
+- [x] T032 [P] Create `sonar-project.properties` at repository root (project key, OpenCover report path, source/test exclusions)
+- [x] T033 [P] Create `coverlet.runsettings` with OpenCover output format for SonarCloud import
+- [x] T034 Extend `.github/workflows/ci.yml` with `dotnet-sonarscanner` begin/end gated by `SONAR_ENABLED` repo variable; require `SONAR_TOKEN` secret, `SONAR_ORGANIZATION` and `SONAR_PROJECT_KEY` repo variables
+- [x] T035 Document SonarCloud setup in `README.md` (create project on SonarCloud first; add badges from SonarCloud UI after import)
+
+---
+
 ## Dependencies & Execution Order
 
 ### Phase Dependencies
@@ -229,13 +240,14 @@ dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj --filter "Categ
 
 | Metric | Count |
 | ------ | ----- |
-| **Total tasks** | 31 |
+| **Total tasks** | 35 |
 | Phase 1 Setup | 7 |
 | Phase 2 Foundational | 5 |
 | Phase 3 US1 (+ supplementary tests) | 8 |
 | Phase 4 US2 | 2 |
 | Phase 5 US3 | 2 |
 | Phase 6 Polish | 7 |
+| Phase 7 SonarCloud | 4 |
 
 | User story | Tasks | Independent test |
 | ---------- | ----- | ---------------- |

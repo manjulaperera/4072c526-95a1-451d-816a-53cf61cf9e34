@@ -12,11 +12,13 @@ jobs:
   build-and-test:
     name: Build, format check, and test
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup .NET 8
         uses: actions/setup-dotnet@v4
@@ -29,6 +31,24 @@ jobs:
       - name: Verify formatting
         run: dotnet format CodingTest.sln --verify-no-changes
 
+      - name: Install SonarScanner
+        if: vars.SONAR_ENABLED == 'true'
+        run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: Begin SonarCloud analysis
+        if: vars.SONAR_ENABLED == 'true'
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_ORGANIZATION: ${{ vars.SONAR_ORGANIZATION }}
+          SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY }}
+        run: >
+          dotnet sonarscanner begin
+          /k:"${SONAR_PROJECT_KEY}"
+          /o:"${SONAR_ORGANIZATION}"
+          /d:sonar.host.url="https://sonarcloud.io"
+          /d:sonar.token="${SONAR_TOKEN}"
+          /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
+
       - name: Build
         run: dotnet build CodingTest.sln --configuration Release --no-restore
 
@@ -39,15 +59,22 @@ jobs:
           --no-build
           --verbosity normal
           --logger "console;verbosity=normal"
+          --settings coverlet.runsettings
           --collect:"XPlat Code Coverage"
           --results-directory TestResults
+
+      - name: End SonarCloud analysis
+        if: vars.SONAR_ENABLED == 'true'
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: dotnet sonarscanner end /d:sonar.token="${SONAR_TOKEN}"
 
       - name: Upload coverage results
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: coverage-report
-          path: TestResults/**/*.cobertura.xml
+          path: TestResults/**/coverage.opencover.xml
           if-no-files-found: warn
 
   docker:
