@@ -1,5 +1,7 @@
 # Coding Exercise
 
+[![Build and Test](https://github.com/manjulaperera/4072c526-95a1-451d-816a-53cf61cf9e34/actions/workflows/ci.yml/badge.svg)](https://github.com/manjulaperera/4072c526-95a1-451d-816a-53cf61cf9e34/actions/workflows/ci.yml)
+
 Finds the longest **contiguous strictly increasing run** in a whitespace-separated integer string. When multiple runs share the maximum length, the earliest run is returned.
 
 ## Prerequisites
