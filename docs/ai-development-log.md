@@ -51,6 +51,17 @@ Human review and verification are required before accepting any AI-generated cha
 
 ---
 
+## 2026-08-03 — Supplied evaluator tests (T013-T014)
+
+| Field | Detail |
+| ----- | ------ |
+| **Activity** | `/speckit-implement` add 11 supplied tests |
+| **Changes** | Added `MainBusinessLogicUnitTests` with `Test_Case_One` through `Test_Case_Eleven`; loads verbatim fixtures via `AcceptanceFixtureReader` |
+| **Verification** | `dotnet test --filter "Category=Unit_Tests"` — Failed: 11 (NotImplementedException) |
+| **Outcome** | Red phase complete; ready for T015+ then implementation |
+
+---
+
 ## Template for future entries
 
 ```markdown

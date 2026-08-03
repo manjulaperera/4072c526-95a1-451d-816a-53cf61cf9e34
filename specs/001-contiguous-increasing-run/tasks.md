@@ -59,8 +59,8 @@ description: "Task list for longest contiguous strictly increasing run feature"
 
 > **NOTE: Confirm all supplied tests fail (red) against the T008 stub before T016–T019**
 
-- [ ] T013 [US1] Create supplied evaluator test class `tests/CodingTestUnitTests/Supplied/MainBusinessLogicUnitTests.cs` with `[Trait("Category","Unit_Tests")]` and methods `Test_Case_One`…`Test_Case_Eleven` (matching `requirements/reference/unit_test_format.txt`) using Given/When/Then and FluentAssertions; load inputs/outputs from `AcceptanceFixtureReader` preserving exact strings
-- [ ] T014 [US1] Run supplied tests and confirm all 11 fail against stub in `src/CodingTest/Handlers/SubSequenceHandler.cs`
+- [x] T013 [US1] Create supplied evaluator test class `tests/CodingTestUnitTests/Supplied/MainBusinessLogicUnitTests.cs` with `[Trait("Category","Unit_Tests")]` and methods `Test_Case_One`…`Test_Case_Eleven` (matching `requirements/reference/unit_test_format.txt`) using Given/When/Then and FluentAssertions; load inputs/outputs from `AcceptanceFixtureReader` preserving exact strings
+- [x] T014 [US1] Run supplied tests and confirm all 11 fail against stub in `src/CodingTest/Handlers/SubSequenceHandler.cs`
 
 ### Supplementary tests ⚠️ Write FIRST — must FAIL before invalid-input implementation
 
