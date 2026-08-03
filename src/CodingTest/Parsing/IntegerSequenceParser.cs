@@ -2,7 +2,7 @@ using System.Globalization;
 
 namespace CodingTest.Parsing;
 
-public static class IntegerSequenceParser
+internal static class IntegerSequenceParser
 {
     public static int[] Parse(string input)
     {

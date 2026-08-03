@@ -2,7 +2,7 @@ using System.Globalization;
 
 namespace CodingTest.Formatting;
 
-public static class RunFormatter
+internal static class RunFormatter
 {
     public static string Format(int[] values)
     {

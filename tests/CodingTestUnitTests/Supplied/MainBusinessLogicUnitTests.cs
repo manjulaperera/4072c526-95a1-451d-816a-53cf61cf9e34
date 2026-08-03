@@ -4,6 +4,10 @@ using FluentAssertions;
 
 namespace CodingTestUnitTests.Supplied;
 
+/// <summary>
+/// Supplied evaluator acceptance tests for AC-001 through AC-011.
+/// Method names and Given/When/Then structure match `requirements/reference/unit_test_format.txt`.
+/// </summary>
 [Trait("Category", "Unit_Tests")]
 public class MainBusinessLogicUnitTests
 {

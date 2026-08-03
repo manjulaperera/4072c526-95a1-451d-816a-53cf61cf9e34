@@ -1,6 +1,6 @@
 namespace CodingTest.Evaluation;
 
-public static class ContiguousRunEvaluator
+internal static class ContiguousRunEvaluator
 {
     public static int[] FindLongestRun(int[] values)
     {
