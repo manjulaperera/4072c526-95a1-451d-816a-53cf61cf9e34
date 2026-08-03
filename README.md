@@ -1,8 +1,8 @@
 # Coding Exercise
 
 [![Build and Test](https://github.com/manjulaperera/4072c526-95a1-451d-816a-53cf61cf9e34/actions/workflows/ci.yml/badge.svg)](https://github.com/manjulaperera/4072c526-95a1-451d-816a-53cf61cf9e34/actions/workflows/ci.yml)
-
-<!-- Add SonarCloud badges from Project → Information → Badges after the project is created -->
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=manjulaperera_4072c526-95a1-451d-816a-53cf61cf9e34&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=manjulaperera_4072c526-95a1-451d-816a-53cf61cf9e34)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=manjulaperera_4072c526-95a1-451d-816a-53cf61cf9e34&metric=coverage)](https://sonarcloud.io/summary/new_code?id=manjulaperera_4072c526-95a1-451d-816a-53cf61cf9e34)
 
 ## Problem
 Develop a function that takes one string input of any number of integers separated by single whitespace. The function then outputs the longest increasing subsequence (increased by any number) present in that sequence. If more than 1 sequence exists with the longest length, output the earliest one. You may develop supporting functions as many as you find reasonable. Your function should pass the test cases provided below.
