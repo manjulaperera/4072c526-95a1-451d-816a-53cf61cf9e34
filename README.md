@@ -55,7 +55,9 @@ dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj --configuration
 
 ## SonarCloud
 
-GitHub Actions generate the SonarCloud reporting dashboard here: 
+GitHub Actions publish coverage and quality metrics to SonarCloud when `SONAR_ENABLED` is `true`.
+
+**Dashboard:** [SonarCloud project](https://sonarcloud.io/project/configuration?id=manjulaperera_4072c526-95a1-451d-816a-53cf61cf9e34)
 
 ## CLI
 
