@@ -165,14 +165,14 @@ Each entry should include date, change summary, verification command, and outcom
 
 Ensure root `README.md` includes:
 
-- [ ] Problem summary (contiguous strictly increasing run)
-- [ ] Prerequisites (.NET 8, Docker optional)
-- [ ] Build commands
-- [ ] Test commands (all + supplied-only filter)
-- [ ] CLI usage example
-- [ ] Docker build/run example
+- [x] Problem summary (contiguous strictly increasing run)
+- [x] Prerequisites (.NET 8, Docker optional)
+- [x] Build commands
+- [x] Test commands (all + supplied-only filter)
+- [x] CLI usage example
+- [x] Docker build/run example
 - [ ] CI badge or link (optional)
-- [ ] Note on AI-assisted development log location
+- [x] Note on AI-assisted development log location
 
 ---
 
@@ -189,12 +189,12 @@ Ensure root `README.md` includes:
 
 ## Definition of done
 
-- [ ] `dotnet build` / `dotnet test` pass locally
-- [ ] `dotnet format --verify-no-changes` pass
-- [ ] 11 supplied evaluator tests pass
-- [ ] Supplementary FR-C01–FR-C03 tests pass
-- [ ] GitHub Actions green
-- [ ] Coverage reporting enabled
-- [ ] Docker CLI runs successfully
-- [ ] README verification section complete
-- [ ] AI development log maintained
+- [x] `dotnet build` / `dotnet test` pass locally
+- [x] `dotnet format --verify-no-changes` pass
+- [x] 11 supplied evaluator tests pass
+- [x] Supplementary FR-C01–FR-C03 tests pass
+- [x] GitHub Actions green
+- [x] Coverage reporting enabled
+- [x] Docker CLI runs successfully
+- [x] README verification section complete
+- [x] AI development log maintained
