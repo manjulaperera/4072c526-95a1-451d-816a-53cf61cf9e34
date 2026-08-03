@@ -19,7 +19,7 @@
 
 - Q: What should the function return or throw when `input` is `null`? → A: Throw `ArgumentNullException`.
 - Q: What should the function return when `input` is an empty string (`""`)? → A: Return empty string `""`.
-- Q: How should the function behave when the input contains tokens that are not valid base-10 integers? → A: Throw an exception on the first invalid token (fail-fast; no partial result).
+- Q: How should the function behave when the input contains tokens that are not valid base-10 integers? → A: Throw `FormatException` on the first invalid token (fail-fast; no partial result). Throw `OverflowException` when a token is numeric but outside signed 32-bit range.
 
 ---
 
@@ -84,7 +84,8 @@ A caller supplies a whitespace-separated list of integers and receives the longe
 | Single-token input | Derived from FR-005 (supplementary) | Return that single token (run of length 1) |
 | Null input | Clarified 2026-08-03 | Throw `ArgumentNullException` |
 | Empty string | Clarified 2026-08-03 | Return empty string `""` |
-| Non-numeric or unparseable tokens | Clarified 2026-08-03 | Throw an exception on the first invalid token |
+| Non-numeric or unparseable tokens | Clarified 2026-08-03 | Throw `FormatException` on the first invalid token |
+| Numeric overflow (outside int32) | Clarified 2026-08-03 | Throw `OverflowException` on the first overflowing token |
 
 ---
 
@@ -199,7 +200,7 @@ The authoritative sources do not define behaviour for invalid or boundary inputs
 
 - **FR-C01**: When `input` is `null`, the function MUST throw `ArgumentNullException`.
 - **FR-C02**: When `input` is an empty string (`""`), the function MUST return an empty string (`""`).
-- **FR-C03**: When `input` contains a token that is not a valid base-10 integer (including empty tokens produced by repeated spaces or overflow values), the function MUST throw an exception on the first such token and MUST NOT return a partial result.
+- **FR-C03**: When `input` contains a token that is not a valid base-10 integer (including empty tokens produced by repeated spaces), the function MUST throw `FormatException` on the first such token and MUST NOT return a partial result. When a token is syntactically numeric but outside the signed 32-bit integer range, the function MUST throw `OverflowException` on the first such token.
 
 ---
 
@@ -219,7 +220,7 @@ The authoritative sources do not define behaviour for invalid or boundary inputs
 - **SC-002**: AC-010 passes, confirming contiguous-run semantics rather than non-contiguous subsequence selection.
 - **SC-003**: When two maximum-length runs exist in the same input, the returned run is the one with the earlier start index (verified by AC-010 and AC-011).
 - **SC-004**: All returned values use single-space delimiters with no leading or trailing spaces (verified across all 11 acceptance criteria).
-- **SC-005**: Null input throws `ArgumentNullException`; empty input returns `""`; first invalid token throws an exception (verified by unit tests covering FR-C01 through FR-C03).
+- **SC-005**: Null input throws `ArgumentNullException`; empty input returns `""`; first invalid token throws `FormatException`; first overflowing token throws `OverflowException` (verified by unit tests covering FR-C01 through FR-C03).
 
 ---
 
