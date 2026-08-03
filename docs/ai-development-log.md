@@ -29,6 +29,17 @@ Human review and verification are required before accepting any AI-generated cha
 
 ---
 
+## 2026-08-03 — Solution scaffold (T001-T012)
+
+| Field | Detail |
+| ----- | ------ |
+| **Activity** | `/speckit-implement` scaffold only |
+| **Changes** | Created `CodingTest.sln`, three net8.0 projects, `Directory.Build.props`, `.editorconfig`, stub `SubSequenceHandler`, embedded acceptance fixtures, `AcceptanceFixtureReader`, CI workflow |
+| **Verification** | `dotnet build CodingTest.sln -c Release` (0 warnings); `dotnet format --verify-no-changes` pass |
+| **Outcome** | Phase 1-2 complete; T013+ deferred (no business logic, no tests yet) |
+
+---
+
 ## Template for future entries
 
 ```markdown
