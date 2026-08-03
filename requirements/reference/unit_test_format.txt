@@ -1,0 +1,17 @@
+[Trait("Category", "Unit_Tests")]
+public class MainBusinessLogicUnitTests
+{
+	[Fact]
+	public void Test_Case_One()
+	{
+		// Given
+		string input = "6 1 5 9 2";
+		string expectedSubSequence = "1 5 9";
+
+		// When
+		string output = SubSequenceHandler.GetLongestIncreasingSubSequence(input);
+
+		// Then
+		output.Should().Be(expectedSubSequence);
+	}
+}
