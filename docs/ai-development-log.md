@@ -18,6 +18,17 @@ Human review and verification are required before accepting any AI-generated cha
 
 ---
 
+## 2026-08-03 — Analyze remediation
+
+| Field | Detail |
+| ----- | ------ |
+| **Activity** | `/speckit-analyze` remediation |
+| **Changes** | Synced namespace to `CodingTest.Handlers` in spec; aligned test class to `MainBusinessLogicUnitTests`; reordered tasks for supplementary test-first (T015 before FR-C implementation); expanded supplementary coverage (single-token, whitespace) |
+| **Verification** | Cross-artifact consistency re-check pending |
+| **Outcome** | Artifacts updated; ready for `/speckit-implement` |
+
+---
+
 ## Template for future entries
 
 ```markdown

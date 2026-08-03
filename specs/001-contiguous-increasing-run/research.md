@@ -92,7 +92,7 @@ Phase 0 decisions resolving technical choices for the .NET 8 implementation plan
 
 **Decision**:
 
-- `SuppliedEvaluatorTests` — exactly 11 tests mapped to AC-001…AC-011.
+- `MainBusinessLogicUnitTests` — exactly 11 tests mapped to AC-001…AC-011 (`Test_Case_One`…`Test_Case_Eleven`).
 - `Supplementary/InvalidInputTests` — FR-C01…FR-C03 and derived edge cases.
 - Large inputs loaded from embedded resources copied from `specs/.../acceptance/ac-NN-input.txt`.
 

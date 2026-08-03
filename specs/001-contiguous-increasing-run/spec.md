@@ -28,7 +28,7 @@
 The following surface is required by the exercise brief and reference test format:
 
 ```csharp
-namespace String.Handlers
+namespace CodingTest.Handlers
 {
     public static class SubSequenceHandler
     {
@@ -81,7 +81,8 @@ A caller supplies a whitespace-separated list of integers and receives the longe
 | -------- | ------ | ------------------ |
 | Multiple max-length runs | AC-010, AC-011 (supplied) | Return the earliest starting run |
 | Equal adjacent values break a run | AC-010 (supplied) | Equal values terminate the current run |
-| Single-token input | Derived from FR-005 (supplementary) | Return that single token (run of length 1) |
+| Single-token input | Derived from FR-005 (supplementary) | Return that single token (run of length 1); covered by supplementary test |
+| Leading/trailing/repeated spaces | FR-C03 (clarified) | Empty tokens from space split → `FormatException` on first empty token |
 | Null input | Clarified 2026-08-03 | Throw `ArgumentNullException` |
 | Empty string | Clarified 2026-08-03 | Return empty string `""` |
 | Non-numeric or unparseable tokens | Clarified 2026-08-03 | Throw `FormatException` on the first invalid token |

@@ -50,7 +50,7 @@ dotnet test CodingTest.sln --configuration Release --no-build
 
 **Expected**:
 
-- All 11 supplied evaluator tests pass (`Test_Case_01` … `Test_Case_11`).
+- All 11 supplied evaluator tests pass (`Test_Case_One` … `Test_Case_Eleven`).
 - Supplementary invalid-input tests pass.
 
 ### Supplied evaluator tests only
