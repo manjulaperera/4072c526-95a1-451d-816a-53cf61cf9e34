@@ -54,14 +54,14 @@ public static class SubSequenceHandler
 ## Evaluator test surface
 
 **Test assembly**: `CodingTestUnitTests`  
-**Supplied test class**: `SuppliedEvaluatorTests` (or `MainBusinessLogicUnitTests` per reference naming — prefer `SuppliedEvaluatorTests` for clarity)
+**Supplied test class**: `MainBusinessLogicUnitTests` (matches `requirements/reference/unit_test_format.txt`)
 
 ```csharp
 [Trait("Category", "Unit_Tests")]
-public class SuppliedEvaluatorTests
+public class MainBusinessLogicUnitTests
 {
     [Fact]
-    public void Test_Case_01()
+    public void Test_Case_One()
     {
         // Given
         string input = /* from AC-001 fixture */;
@@ -74,7 +74,7 @@ public class SuppliedEvaluatorTests
         output.Should().Be(expectedSubSequence);
     }
 
-    // Test_Case_02 … Test_Case_11 likewise
+    // Test_Case_Two … Test_Case_Eleven likewise (one method per AC-002…AC-011)
 }
 ```
 
@@ -101,14 +101,13 @@ Stdout contains exactly the handler return value (no extra labels).
 
 ---
 
-## Namespace divergence (documented)
+## Namespace
 
 | Source | Namespace |
 | ------ | --------- |
-| Functional spec (`spec.md`) | `String.Handlers` |
-| **Implementation (this contract)** | **`CodingTest.Handlers`** |
+| **Implementation and tests** | **`CodingTest.Handlers`** |
 
-Implementation and tests MUST use `CodingTest.Handlers` per approved plan.
+All artifacts use `CodingTest.Handlers` (aligned with `spec.md` and `plan.md`).
 
 ---
 

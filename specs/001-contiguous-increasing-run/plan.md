@@ -117,7 +117,7 @@ tests/
 └── CodingTestUnitTests/
     ├── CodingTestUnitTests.csproj
     ├── Supplied/
-    │   └── SuppliedEvaluatorTests.cs  # AC-001…AC-011 only
+    │   └── MainBusinessLogicUnitTests.cs  # AC-001…AC-011 only
     ├── Supplementary/
     │   └── InvalidInputTests.cs       # FR-C01…FR-C03
     └── Fixtures/
@@ -139,7 +139,7 @@ tests/
 ### Phase B — Test-first (evaluator cases)
 
 1. Add xUnit + FluentAssertions to test project.
-2. Implement `SuppliedEvaluatorTests` with 11 tests named `Test_Case_01` … `Test_Case_11` matching evaluator style.
+2. Implement `MainBusinessLogicUnitTests` with 11 tests named `Test_Case_One` … `Test_Case_Eleven` matching `requirements/reference/unit_test_format.txt`.
 3. Load large-case inputs/outputs from `specs/001-contiguous-increasing-run/acceptance/ac-NN-*.txt` (copy or link as embedded resources — prefer **embedded resources** under `tests/.../Fixtures/` copied verbatim from acceptance fixtures to keep tests self-contained).
 4. Confirm all 11 tests fail (red) against stub handler.
 
