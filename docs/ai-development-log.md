@@ -62,6 +62,17 @@ Human review and verification are required before accepting any AI-generated cha
 
 ---
 
+## 2026-08-03 — Supplementary tests + core implementation (T015-T020)
+
+| Field | Detail |
+| ----- | ------ |
+| **Activity** | `/speckit-implement` T015 supplementary tests; T016-T019 parse/evaluate/format/handler; T020 verification |
+| **Changes** | Added `InvalidInputTests` (8 cases); implemented `IntegerSequenceParser`, `ContiguousRunEvaluator`, `RunFormatter`, wired `SubSequenceHandler`; updated `WorkflowSmokeTests` for implemented handler |
+| **Verification** | `Category=Supplementary` — Passed: 6, Failed: 2 (null → NullReferenceException, empty → FormatException; FR-C01/FR-C02 deferred to T021). `Category=Unit_Tests` Release — Passed: 11/11 |
+| **Outcome** | Evaluator MVP green; supplementary partially red as planned |
+
+---
+
 ## Template for future entries
 
 ```markdown

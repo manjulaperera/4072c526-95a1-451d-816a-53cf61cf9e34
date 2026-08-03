@@ -66,15 +66,15 @@ description: "Task list for longest contiguous strictly increasing run feature"
 
 > **NOTE: T015 must complete (red) before T021 implements FR-C01–FR-C03**
 
-- [ ] T015 [US2] Create supplementary test class `tests/CodingTestUnitTests/Supplementary/InvalidInputTests.cs` with `[Trait("Category","Supplementary")]` covering FR-C01 (`ArgumentNullException`), FR-C02 (empty → `""`), FR-C03 (`FormatException` on invalid/empty tokens including repeated spaces and leading/trailing spaces, `OverflowException` on overflow), plus single-token input (`"42"` → `"42"`); confirm all supplementary tests fail against stub
+- [x] T015 [US2] Create supplementary test class `tests/CodingTestUnitTests/Supplementary/InvalidInputTests.cs` with `[Trait("Category","Supplementary")]` covering FR-C01 (`ArgumentNullException`), FR-C02 (empty → `""`), FR-C03 (`FormatException` on invalid/empty tokens including repeated spaces and leading/trailing spaces, `OverflowException` on overflow), plus single-token input (`"42"` → `"42"`); confirm all supplementary tests fail against stub
 
 ### Implementation for User Story 1 (valid evaluator paths only)
 
-- [ ] T016 [P] [US1] Implement `IntegerSequenceParser` in `src/CodingTest/Parsing/IntegerSequenceParser.cs` for **valid evaluator inputs only** (ASCII space split; parse base-10 int32 tokens; defer FR-C01–FR-C03 guards to T021)
-- [ ] T017 [P] [US1] Implement O(n) `ContiguousRunEvaluator` in `src/CodingTest/Evaluation/ContiguousRunEvaluator.cs` tracking `currentStart`, `currentLength`, `bestStart`, `bestLength`; continue run only on strict `>`; update best only when `currentLength > bestLength`
-- [ ] T018 [P] [US1] Implement `RunFormatter` in `src/CodingTest/Formatting/RunFormatter.cs` (join with single ASCII space; no leading/trailing space)
-- [ ] T019 [US1] Wire parse → evaluate → format in `src/CodingTest/Handlers/SubSequenceHandler.cs` for valid inputs
-- [ ] T020 [US1] Verify all 11 supplied evaluator tests pass: `dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj --filter "Category=Unit_Tests" --configuration Release`
+- [x] T016 [P] [US1] Implement `IntegerSequenceParser` in `src/CodingTest/Parsing/IntegerSequenceParser.cs` for **valid evaluator inputs only** (ASCII space split; parse base-10 int32 tokens; defer FR-C01–FR-C03 guards to T021)
+- [x] T017 [P] [US1] Implement O(n) `ContiguousRunEvaluator` in `src/CodingTest/Evaluation/ContiguousRunEvaluator.cs` tracking `currentStart`, `currentLength`, `bestStart`, `bestLength`; continue run only on strict `>`; update best only when `currentLength > bestLength`
+- [x] T018 [P] [US1] Implement `RunFormatter` in `src/CodingTest/Formatting/RunFormatter.cs` (join with single ASCII space; no leading/trailing space)
+- [x] T019 [US1] Wire parse → evaluate → format in `src/CodingTest/Handlers/SubSequenceHandler.cs` for valid inputs
+- [x] T020 [US1] Verify all 11 supplied evaluator tests pass: `dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj --filter "Category=Unit_Tests" --configuration Release`
 
 **Checkpoint**: User Story 1 complete — MVP delivers full evaluator compatibility (supplementary tests still expected red until Phase 4)
 

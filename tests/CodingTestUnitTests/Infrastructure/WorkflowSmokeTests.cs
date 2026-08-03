@@ -7,15 +7,10 @@ namespace CodingTestUnitTests.Infrastructure;
 public class WorkflowSmokeTests
 {
     [Fact]
-    public void SubSequenceHandler_stub_throws_not_implemented()
+    public void SubSequenceHandler_returns_longest_contiguous_run_for_sample_input()
     {
-        // Given
-        const string input = "6 1 5 9 2";
+        string output = SubSequenceHandler.GetLongestIncreasingSubSequence("6 1 5 9 2");
 
-        // When
-        Action act = () => SubSequenceHandler.GetLongestIncreasingSubSequence(input);
-
-        // Then
-        act.Should().Throw<NotImplementedException>();
+        output.Should().Be("1 5 9");
     }
 }
