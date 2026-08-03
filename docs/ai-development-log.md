@@ -40,6 +40,17 @@ Human review and verification are required before accepting any AI-generated cha
 
 ---
 
+## 2026-08-03 — Initial CI build and test workflow
+
+| Field | Detail |
+| ----- | ------ |
+| **Activity** | `/speckit-implement` CI workflow |
+| **Changes** | Hardened `.github/workflows/ci.yml` (push/PR triggers, concurrency, .NET 8); added `WorkflowSmokeTests` so CI test step executes one passing test against stub handler |
+| **Verification** | `dotnet test CodingTest.sln -c Release` — 1 passed |
+| **Outcome** | Initial build/format/test pipeline ready for GitHub Actions |
+
+---
+
 ## Template for future entries
 
 ```markdown
