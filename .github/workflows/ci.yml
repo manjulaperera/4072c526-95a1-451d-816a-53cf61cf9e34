@@ -47,7 +47,12 @@ jobs:
           /o:"${SONAR_ORGANIZATION}"
           /d:sonar.host.url="https://sonarcloud.io"
           /d:sonar.token="${SONAR_TOKEN}"
+          /d:sonar.projectName="Coding Exercise"
+          /d:sonar.sourceEncoding="UTF-8"
           /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
+          /d:sonar.exclusions="**/bin/**,**/obj/**,**/Fixtures/**"
+          /d:sonar.test.inclusions="**/*Tests/**/*.cs,**/*UnitTests/**/*.cs"
+          /d:sonar.coverage.exclusions="**/Program.cs"
 
       - name: Build
         run: dotnet build CodingTest.sln --configuration Release --no-restore
