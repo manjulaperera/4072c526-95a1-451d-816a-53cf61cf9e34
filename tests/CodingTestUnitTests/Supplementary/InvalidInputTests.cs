@@ -3,6 +3,10 @@ using FluentAssertions;
 
 namespace CodingTestUnitTests.Supplementary;
 
+/// <summary>
+/// Supplementary tests for invalid and boundary input (FR-C01 through FR-C03).
+/// Covers null, empty, malformed tokens, whitespace edge cases, overflow, and single-token input.
+/// </summary>
 [Trait("Category", "Supplementary")]
 public class InvalidInputTests
 {

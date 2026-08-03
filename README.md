@@ -43,6 +43,8 @@ dotnet test CodingTest.sln --configuration Release
 
 Supplied evaluator tests only (11 cases):
 
+Implemented in [`tests/CodingTestUnitTests/Supplied/MainBusinessLogicUnitTests.cs`](tests/CodingTestUnitTests/Supplied/MainBusinessLogicUnitTests.cs) (`Test_Case_One` … `Test_Case_Eleven`).
+
 ```bash
 dotnet test tests/CodingTestUnitTests/CodingTestUnitTests.csproj --configuration Release --filter "Category=Unit_Tests"
 ```
