@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\CodingTest\CodingTest.csproj" />
+    <ProjectReference Include="..\..\src\CodingTestCli\CodingTestCli.csproj" />
   </ItemGroup>
 
   <ItemGroup>
